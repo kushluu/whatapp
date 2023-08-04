@@ -1,0 +1,57 @@
+.login-container {
+    min-width: 300px;
+    min-height: 300px;
+    width: 50vw;
+    height: 30vh;
+    color: rgb(13, 13, 13);
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+
+/* Apply styles when the viewport width is at least 768 pixels */
+@media (min-width: 768px) {
+    .login-container {
+        width: 80vw;
+        /* 80% of the viewport width */
+        font-size: 18px;
+    }
+}
+
+/* Apply styles when the viewport height is at least 500 pixels */
+@media (min-height: 500px) {
+    .login-container {
+        height: 30vh;
+        /* 20% of the viewport height */
+    }
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* login-btn Hover Effect */
+.login-btn:hover {
+    background-color: #0056b3;
+    /* Darker blue on hover */
+}
+
+/* login-btn Active (Pressed) State */
+.login-btn:active {
+    background-color: #003366;
+    /* Darker blue on click */
+}
+
+/* login-btn Disabled State */
+.login-btn:disabled {
+    background-color: #ccc;
+    /* Gray background for disabled button */
+    cursor: not-allowed;
+    /* Cursor indicates the button is not clickable */
+}
