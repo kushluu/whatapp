@@ -9,7 +9,7 @@ class Authentication(BaseAuthentication):
 
     def authenticate(self, request):
         token = request.COOKIES.get('jwt')
-
+        print(token)
         if not token:
             raise AuthenticationFailed('not user')
         try:

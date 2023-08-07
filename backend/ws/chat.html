@@ -1,0 +1,29 @@
+<!-- chat.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Chat</title>
+</head>
+<body>
+    <input type="text" id="messageInput">
+    <button onclick="sendMessage()">Send</button>
+    <div id="chatOutput"></div>
+
+    <script>
+        const chatSocket = new WebSocket('ws://' + window.location.host + '/ws/chat/');
+
+        chatSocket.onmessage = function(event) {
+            const message = JSON.parse(event.data);
+            document.querySelector('#chatOutput').innerHTML += '<p>' + message.message + '</p>';
+        };
+
+        function sendMessage() {
+            const messageInput = document.querySelector('#messageInput');
+            const message = messageInput.value;
+            chatSocket.send(JSON.stringify({'message': message}));
+            messageInput.value = '';
+        }
+    </script>
+</body>
+</html>

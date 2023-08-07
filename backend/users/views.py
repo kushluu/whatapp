@@ -252,3 +252,9 @@ class Reactupload_file(APIView):
         print(request.data.get('image'))
         temp=upload(request.data.get('image'))
         return Response(temp['secure_url'])
+    
+@authentication_classes([])
+class get_user(APIView):
+    def post(self,request):
+        print(request.user)
+        return Response({})

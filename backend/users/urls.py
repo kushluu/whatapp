@@ -16,6 +16,9 @@ urlpatterns = [
     path('superuser',Make_superuser.as_view()),
     path('deleteuser',Delete_user.as_view()),
     path('searchuser',Search_user.as_view()),
+    path('get-users/',get_user.as_view()),
+
+
 
     # ==================================
 
